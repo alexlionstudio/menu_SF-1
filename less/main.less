@@ -1,0 +1,399 @@
+@import url(_color.less);
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@logo_fonts:  'Montserrat', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700&subset=cyrillic');
+@text_fonts: 'Roboto', sans-serif;
+
+@form-text_fonts-size: 16px;
+@menu-text_fonts-size: 16px;
+
+body{
+	margin: 0;
+	padding: 0;
+	@media (min-width: 768px) {	
+		padding: 0 25px;
+	}
+}
+*,
+*:before,
+*:after {
+     -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+// -----------------------------------------------
+//                   Top Header Bar
+// -----------------------------------------------
+.top-header{
+	padding: 0;
+	background: @pressed_menu_color;
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+	@media (min-width: 768px) {		
+		padding: 12px 0;
+		background: none;
+	}
+}
+
+.top-header__logo{
+	float: left;
+	padding: 0;
+	margin: 0;
+	font-size: 20px;
+	line-height: 1;
+	text-transform: uppercase;
+	font-family: @logo_fonts;
+	font-weight: 400;
+	color: #fff;
+	padding: 13px;
+	cursor: pointer;	
+	&:hover{
+		background: @hover_menu_color;
+	}
+	&:active{
+		background: @pressed_menu_color;
+	}
+	@media (min-width: 768px) {
+		padding: 0;
+		font-size: 35px;
+		font-weight: 600;
+		color: @common_menu_color;
+		&:hover{
+			color: @hover_menu_color;
+			background: none;
+		}
+		&:active{
+			color: @pressed_menu_color;
+			background: none;
+		}
+	}
+}
+// -----------------------------------------------
+//                 Togles Mobile BAR
+// -----------------------------------------------
+.top-header__toggle-nav{
+	float: right;
+	padding: 15px;
+	cursor: pointer;
+	display: block;
+	@media (min-width: 768px) {	
+		display: none;
+	}
+	&:hover{		
+		background: @hover_menu_color;
+	}
+	&:active{		
+		background: @pressed_menu_color;
+	}
+	&:after{
+		content: "";
+		display: block;
+		background-image: url("../icons/navigation.svg");
+		background-repeat: no-repeat;
+		width: 22px;
+		height: 16px;
+	}
+}
+.top-header__toggle-search{
+	float: right;
+	padding: 14px 16px;
+	cursor: pointer;
+	display: block;
+	@media (min-width: 768px) {	
+		display: none;
+	}
+	&:hover{		
+		background: @hover_menu_color;
+	}
+	&:active{		
+		background: @pressed_menu_color;
+	}
+	&:after{
+		content: "";
+		display: block;
+		background-image: url("../icons/search.svg");
+		background-repeat: no-repeat;
+		width: 18px;
+		height: 18px;
+	}
+}
+.top-header__toggle-lang{
+	padding: 14px 16px;
+	cursor: pointer;
+	display: block;
+	font-family: @text_fonts;
+	font-size: @menu-text_fonts-size;
+	font-weight: 400;
+	letter-spacing: 1px;
+	color: #fff;
+	text-transform: uppercase;
+	@media (min-width: 768px) {	
+		display: none;
+	}
+	&:hover{		
+		background: @hover_menu_color;
+	}
+	&:active{		
+		background: @pressed_menu_color;
+	}
+}
+.top-header__toggle-lang--ru{
+	&:after{
+		content: "ru";
+		display: block;
+		height: 18px;
+	}
+}
+.top-header__toggle-lang--en{
+	&:after{
+		content: "en";
+		display: block;
+		height: 18px;
+	}
+}
+.top-header__toggle--color{
+	background: @common_menu_color;	
+}
+// -----------------------------------------------
+//                Search Form Menu
+// -----------------------------------------------
+.top-header__search{		
+	background: @common_search-menu_color;	
+	color: @common_menu_color;
+	overflow: hidden;
+	padding: 7px 15px 7px 15px;	
+	font-size: 0;
+	width: 100%;
+	display: none;
+	@media (min-width: 768px) {	
+		display: block;
+		padding: 0px 0px 0px 15px;		
+		float: right;
+		border: solid 1px @common_menu_color;
+		border-radius: 20px;		
+		width: auto;
+	}
+	&--active{		
+		display: block;
+	}
+	& input{			
+		font-family: @text_fonts;
+		font-weight: 400;
+		outline: none;
+		border: none;
+		height: 35px;
+		width: 90%;
+	    background: none;
+	    color: @common_menu_color;
+	    font-size: @form-text_fonts-size;
+	    @media (min-width: 768px) {
+	    	width: 165px;
+		}
+	}
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	  color: @hover_menu_color;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+	  color: @hover_menu_color;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+	  color: @hover_menu_color;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+	  color: @hover_menu_color;
+	}
+	// Сбрасываем подсветку при автозаполнение
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover, 
+	input:-webkit-autofill:focus
+	input:-webkit-autofill, 
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+	  -webkit-text-fill-color: green;
+	  -webkit-box-shadow: none;
+	  transition: background-color 5000s ease-in-out 0s; // он просто затягивает появление желтого фона на 5000 с
+	}
+	& button{
+		border: none;
+		background: none;
+		outline: none;
+		font-size: 18px;
+		line-height: 18px;
+		text-align: right;
+		cursor: pointer;
+		width: 10%;
+		@media (min-width: 768px) {	
+			margin-right: 10px;
+			width: auto;
+		}
+		& .fa{
+			color: @common_menu_color;
+		}
+		& .fa:hover{
+			color: @hover_menu_color;
+		}
+		& .fa:active{
+			color: @pressed_menu_color;
+		}
+	}
+}
+
+// -----------------------------------------------
+//                Toogles language Menu
+// -----------------------------------------------
+.top-header__box-lang{
+	position: relative;
+	float: right;
+}
+.top-header__lang{
+	position: absolute;
+	right: 0;
+	left: 0;
+	overflow: hidden;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	display: none;
+	&--active{
+		display: block;
+	}
+
+	font-size: 0;
+	@media (min-width: 768px) {
+		margin-left: 24px;
+		position: static;
+		display: block;
+	}
+	& .top-header__lang-item{
+		display: inline-block;
+		list-style: none;
+		text-align: center;
+		width: 58px;
+		height: 35px;
+		cursor: pointer;
+		background: @common_menu_color;
+		color: #fff;
+		@media (min-width: 768px) {				
+			color: @pressed_menu_color;		
+			border-radius: 20px;
+			background: none;
+		}
+
+		margin-right: 5px;
+		&:last-child{
+			margin-right: 0px;
+		}
+
+		& span{
+			font-family: @text_fonts;
+			text-transform: uppercase;
+			font-weight: 400;
+			letter-spacing: 1px;
+			font-size: @menu-text_fonts-size;
+			line-height: 35px;
+		}	
+
+		&:hover{			
+			background: @hover_menu_color;
+			& span{
+				color: #fff;
+			}
+		}
+		&:active{			
+			background: @hover_menu_color;
+			& span{
+				color: @pressed_menu_color;
+			}
+		}
+		&--remove{
+			display: none;
+			@media (min-width: 768px) {				
+				display: inline-block;
+			}
+		}
+	}
+	& .active{
+		background: @common_menu_color;
+		& span{
+			color: #fff;
+		}
+	}
+}
+
+// -----------------------------------------------
+//                   Navigation bar
+// -----------------------------------------------
+.nav-bar{
+	background: @common_menu_color;
+	display: none;
+	@media (min-width: 768px) {				
+		display: block;
+		height: 50px;
+		&:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+	&--active{		
+		display: block;
+	}
+}
+.nav-bar__navigation{
+	& ul{
+		margin: 0;
+		padding: 0;
+		font-size: 0;
+		@media (min-width: 768px) {
+			float: right;
+		}
+		& li{
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: block;
+			overflow: hidden;
+			@media (min-width: 768px) {
+					display: inline-block;
+			}
+			& a{
+				font-family: @text_fonts;
+				font-size: @menu-text_fonts-size;
+				font-weight: 400;
+				letter-spacing: 1px;
+				color: #fff;
+				text-decoration: none;
+				line-height: 50px;
+				text-transform: uppercase;
+				padding: 0px 15px;
+				display: block;
+				@media (min-width: 768px) {
+					padding: 0px 15px;
+				}
+				@media (min-width: 996px) {
+					padding: 0px 20px;
+				}
+
+				
+				&:hover{
+					background: @hover_menu_color;
+				}
+				&:active{
+					color: @pressed_menu_color;
+				}
+			}
+		}
+	}
+}

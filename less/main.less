@@ -280,14 +280,15 @@ body{
 		list-style: none;
 		text-align: center;
 		width: 58px;
-		height: 35px;
+		height: 46px;
 		cursor: pointer;
 		background: @common_menu_color;
 		color: #fff;
 		@media (min-width: 768px) {				
 			color: @pressed_menu_color;		
 			border-radius: 20px;
-			background: none;
+			background: none;			
+			height: 35px;
 		}
 
 		margin-right: 5px;
@@ -301,7 +302,10 @@ body{
 			font-weight: 400;
 			letter-spacing: 1px;
 			font-size: @menu-text_fonts-size;
-			line-height: 35px;
+			line-height: 46px;
+			@media (min-width: 768px) {				
+				line-height: 35px;
+			}
 		}	
 
 		&:hover{			

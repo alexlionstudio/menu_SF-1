@@ -272,7 +272,7 @@ body {
   list-style: none;
   text-align: center;
   width: 58px;
-  height: 35px;
+  height: 46px;
   cursor: pointer;
   background: #00a39b;
   color: #fff;
@@ -283,6 +283,7 @@ body {
     color: #057971;
     border-radius: 20px;
     background: none;
+    height: 35px;
   }
 }
 .top-header__lang .top-header__lang-item:last-child {
@@ -294,7 +295,12 @@ body {
   font-weight: 400;
   letter-spacing: 1px;
   font-size: 16px;
-  line-height: 35px;
+  line-height: 46px;
+}
+@media (min-width: 768px) {
+  .top-header__lang .top-header__lang-item span {
+    line-height: 35px;
+  }
 }
 .top-header__lang .top-header__lang-item:hover {
   background: #61c0b6;
